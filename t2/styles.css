@@ -1,0 +1,154 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+svg path {
+    fill: currentcolor;
+}
+
+#bound {
+    height: 100%;
+    width: 100%;
+
+    animation-name: edge-touch;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+#logo {
+    width: 10%;
+    color: inherit;
+    animation-name: hor-movement, ver-movement;
+    animation-duration: 8s, 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes ver-movement {
+    from {
+        margin-top: 0vh;
+    }
+
+    to {
+        margin-top: calc(100vh - 5.96%);
+    }
+}
+
+@keyframes hor-movement {
+    from {
+        margin-left: 0%;
+    }
+
+    to {
+        margin-left: 90%;
+    }
+}
+
+@keyframes edge-touch {
+    0% {
+        color: blue;
+    }
+
+    12.49% {
+        color: blue;
+    }
+
+    12.5% {
+        color: white;
+    }
+
+    19.9% {
+        color: white;
+    }
+
+    20% {
+        color: red;
+    }
+
+    24.99% {
+        color: red;
+    }
+
+    25% {
+        color: green;
+    }
+
+    37.49% {
+        color: green;
+    }
+
+    37.5% {
+        color: peru;
+    }
+
+    39.99% {
+        color: peru;
+    }
+
+    40% {
+        color: aqua;
+    }
+
+    49.99% {
+        color: aqua;
+    }
+
+    50% {
+        color: azure;
+    }
+
+    59.99% {
+        color: azure;
+    }
+
+    60% {
+        color: blueviolet;
+    }
+
+    62.49% {
+        color: blueviolet;
+    }
+
+    62.5% {
+        color: brown;
+    }
+
+    74.99% {
+        color: brown;
+    }
+
+    75% {
+        color: chartreuse;
+    }
+
+    79.99% {
+        color: chartreuse;
+    }
+
+    80% {
+        color: aquamarine;
+    }
+
+    87.49% {
+        color: aquamarine;
+    }
+
+    87.5% {
+        color: greenyellow;
+    }
+
+    99.99% {
+        color: greenyellow;
+    }
+
+    100% {
+        color: blue;
+    }
+}
