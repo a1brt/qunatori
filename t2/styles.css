@@ -22,6 +22,7 @@ svg path {
 }
 
 #logo {
+    position: absolute;
     width: 10%;
     color: inherit;
     animation-name: hor-movement, ver-movement;
@@ -33,21 +34,21 @@ svg path {
 
 @keyframes ver-movement {
     from {
-        margin-top: 0vh;
+        top: 0vh;
     }
 
     to {
-        margin-top: calc(100vh - 5.96%);
+        top: calc(100vh - 5.095vw);
     }
 }
 
 @keyframes hor-movement {
     from {
-        margin-left: 0%;
+        left: 0vw;
     }
 
     to {
-        margin-left: 90%;
+        left: 90vw;
     }
 }
 
