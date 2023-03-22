@@ -32,10 +32,6 @@ svg path {
     animation-timing-function: linear;
 }
 
-#sound{
-    display: none;
-}
-
 @keyframes ver-movement {
     from {
         top: 0vh;
