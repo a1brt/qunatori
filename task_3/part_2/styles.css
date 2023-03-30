@@ -1,0 +1,31 @@
+
+body {
+    background: white;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+svg {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.clock-hand__minute{
+    animation: rotate 10s infinite linear;
+}
+.clock-hand__hour{
+    animation: rotate 30s infinite linear;
+}
+
+
+@keyframes rotate {
+    from{
+        transform-origin:center;
+        transform: rotate(0deg);
+    }
+    to{
+        transform-origin:center;
+        transform: rotate(360deg);
+    }
+}
