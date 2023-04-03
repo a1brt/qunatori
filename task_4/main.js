@@ -23,9 +23,7 @@
   * Write a function that returns odd array values.
   * [1,2,3,4] => [1,3]
   */
-const getOddValues = numbers => {
-  return numbers.filter(n => (n & 1) === 1);
-};
+const getOddValues = numbers => numbers.filter(n => (n & 1) === 1);
 /**
   * Exercise 2
   *
@@ -48,8 +46,15 @@ const getSmallestValue = numbers => {
   * [5,22,9,43] => 43
   */
 const getBiggestValue = numbers => {
-  return Math.max(...numbers);
-};
+  let max = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+  return max;
+}
+
 /**
   * Exercise 4
   *
@@ -67,9 +72,8 @@ const getBiggestValue = numbers => {
   *
   * Use: filter
   */
-const getShorterStrings = (strings, characters = 20) => {
-  return strings.filter(w => w.length < characters);
-};
+const getShorterStrings = (strings, characters = 20) => strings.filter(w => w.length < characters);
+
 /**
   * Exercise 5
   *
@@ -87,9 +91,8 @@ const getShorterStrings = (strings, characters = 20) => {
   *
   * Use: map
   */
-const getComputedStrings = fish => {
-  return fish.map(f => `${f.name} likes ${f.likes}`);
-};
+const getComputedStrings = fish => fish.map(f => `${f.name} likes ${f.likes}`);
+
 /**
   * Exercise 6
   *
@@ -111,9 +114,8 @@ const mergeObjects = objects => {
   *
   * Use: operator ... and Math.min
   */
-const getSmallestValue2 = numbers => {
-  return Math.min(...numbers);
-};
+const getSmallestValue2 = numbers => Math.min(...numbers);
+
 /**
   * Exercise 8
   *
@@ -122,9 +124,8 @@ const getSmallestValue2 = numbers => {
   *
   * Use: reduce
   */
-const getOddValues2 = numbers => {
-  return numbers.reduce((accumulator, currentValue) => (currentValue & 1) === 0 ? accumulator : accumulator.concat(currentValue), []);
-};
+const getOddValues2 = numbers => numbers.reduce((accumulator, currentValue) => (currentValue & 1) === 0 ? accumulator : accumulator.concat(currentValue), []);
+
 /**
   * Exercise 9
   *
@@ -187,9 +188,8 @@ const getErrorMessage = code => {
   *
   * Use: .sort()
   */
-const get2SmallestValues = numbers => {
-  return numbers.sort((a, b) => a - b).slice(0, 2);
-};
+const get2SmallestValues = numbers => numbers.sort((a, b) => a - b).slice(0, 2);
+
 /**
   * Exercise 13
   *
@@ -201,9 +201,8 @@ const get2SmallestValues = numbers => {
   *}
   * output line with the message 'Name: Petr Ivanovich Vasiliev'
   */
-const getFullName = user => {
-  return `Name: ${user.firstName} ${user.patronymic} ${user.secondName}`;
-};
+const getFullName = user => `Name: ${user.firstName} ${user.patronymic} ${user.secondName}`;
+
 /**
   * Exercise 14
   *
@@ -214,9 +213,8 @@ const getFullName = user => {
   *
   * Use: map
   */
-const multiplyTo = (numbers, multiplier) => {
-  return numbers.map(n => n * multiplier);
-};
+const multiplyTo = (numbers, multiplier) => numbers.map(n => n * multiplier);
+
 /**
   * Exercise 15
   *
@@ -251,9 +249,8 @@ const getCharacterNames = (characters, franchise) => {
   *]
   * => [1,2,3,4]
   */
-const getSmallestRow = numbers => {
-  return numbers.map(arr => Math.min(...arr));
-};
+const getSmallestRow = numbers => numbers.map(arr => Math.min(...arr));
+
 /**
 * Exercise 17
 *
@@ -285,9 +282,8 @@ const getSmallestColumn = numbers => {
   * Write a function that returns the 2 biggest value of an array
   * [4,3,2,1] => [4,3]
   */
-const get2BiggestValues = numbers => {
-  return numbers.sort((a, b) => b - a).slice(0, 2);
-};
+const get2BiggestValues = numbers => numbers.sort((a, b) => b - a).slice(0, 2);
+
 /**
   * Exercise 19
   *
@@ -309,9 +305,14 @@ const getNumberOfVowels = string => {
   * 'abcdef' => ['AbCdEf', 'aBcDeF']
   */
 const getCapitalizedStrings = string => {
-  const even = [...string].map((c, i) => (i & 1) === 1 ? c.toUpperCase() : c).join('');
-  const odd = [...string].map((c, i) => (i & 1) === 0 ? c.toUpperCase() : c).join('');
-  return [even, odd];
+  const even = [];
+  const odd = [];
+  for (let i = 0; i < string.length; i++) {
+    const letter = string[i];
+    odd.push((i & 1) === 0 ? letter.toUpperCase() : letter);
+    even.push((i & 1) === 1 ? letter.toUpperCase() : letter);
+  }
+  return [even.join(''), odd.join('')];
 };
 /**
   * Exercise 21
@@ -331,9 +332,8 @@ const getCapitalizedStrings = string => {
   * N is an integer in the range [1..200,000]
   * S consists only of lowercase letters [a-z]
   */
-const getCorrectString = string => {
-  return string.replace(/[^[a-z]]|(.)(?=\1\1)/g, '');
-};
+const getCorrectString = string => string.replace(/[^[a-z]]|(.)(?=\1\1)/g, '');
+
 /**
  * Exercise 22
  *
@@ -358,5 +358,5 @@ const getFlattenedArray = numbers => {
 * [1, 2, 2, 4, 5, 5] => [2, 5]
 */
 const getNotUniqueValues = numbers => {
-  return numbers.sort((a, b) => a - b).filter((e, i, arr) => arr[i - 1] === e)
+  return [...new Set((numbers.sort((a, b) => a - b).filter((e, i, arr) => arr[i - 1] === e)))]
 };
