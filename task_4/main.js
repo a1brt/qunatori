@@ -358,5 +358,5 @@ const getFlattenedArray = numbers => {
 * [1, 2, 2, 4, 5, 5] => [2, 5]
 */
 const getNotUniqueValues = numbers => {
-  return [...new Set((numbers.sort((a, b) => a - b).filter((e, i, arr) => arr[i - 1] === e)))]
+  return numbers.sort((a, b) => a - b).filter((e, i, arr) => arr[i - 1] === e && arr[i + 1] !== e)
 };
