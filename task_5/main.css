@@ -1,0 +1,305 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  z-index: 10;
+}
+
+.main__container__tasks__pending p,
+.main__container__tasks__completed p {
+  font-family: "Nunito";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.38;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.main__container__tasks__pending__list__item,
+.main__container__tasks__completed__list__item {
+  display: flex;
+  flex-direction: row;
+  width: 382px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main__container__tasks__pending__list__item input,
+.main__container__tasks__completed__list__item input {
+  margin-right: 20px;
+  height: 68px;
+}
+
+.main__container__tasks__pending__list__item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main__container__tasks__pending__list__item__content__title {
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.39;
+  color: #1d1d1d;
+}
+
+.main__container__tasks__pending__list__item__content__dateType {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main__container__tasks__pending__list__item__content__type {
+  margin-right: 10px;
+}
+
+.main__container__tasks__pending__list__item__removeIcon {
+  margin-right: 8px;
+  margin-left: auto;
+}
+
+.main__container {
+  width: 100vw;
+  height: 100vh;
+  padding: 44px 165px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+header {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+
+  color: #1d1d1d;
+  margin-bottom: 44px;
+}
+
+.main__container__searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.main__container__searchfield {
+  width: calc(100% - 40px - 158px - 2 * 44px);
+  height: 52px;
+  background-color: #f5f5f5;
+  border: 1px solid #d2d2d2;
+  border-radius: 12px;
+  margin-right: 40px;
+}
+
+.main__container__searchbar button {
+  width: 158px;
+  height: 52px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+
+  text-align: center;
+
+  color: #0053cf;
+
+  background-color: rgba(60, 134, 244, 0.15);
+  border-radius: 12px;
+  border: none;
+}
+
+
+.main__container__tasks__pending__list__item__content__date {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #838383;
+}
+
+
+.modal__container__inside {
+  width: 524px;
+  height: 398px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  background-color: white;
+
+  border-radius: 24px;
+  z-index: 100;
+}
+
+.modal__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.88);
+  background: #f5f5f5;
+  z-index: 10;
+}
+
+.modal__container__inside__title {
+  height: 32px;
+  margin-bottom: 38px;
+}
+
+.modal__container__inside__title h2 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+  margin-top: 24px;
+}
+
+.modal__container__input__todo input {
+  width: calc(524px - 2 * 27px);
+  height: 52px;
+  background: #f5f5f5;
+  border: 1px solid #d2d2d2;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.modal__container__input__options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(524px - 2 * 27px);
+  align-items: center;
+  margin-bottom: 92px;
+}
+
+.modal__container__input__options__type {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.health {
+  background-color: rgba(60, 134, 244, 0.31);
+  color: #0053cf;
+}
+
+.work {
+  background-color: #e8d7ff;
+  color: #9747ff;
+}
+
+.home {
+  background-color: #e2f7e2;
+  color: #639462;
+}
+
+.other {
+  background-color: #ffecc7;
+  color: #ea8c00;
+}
+
+.modal__container__input__options__date {
+  width: 120px;
+  height: 40px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #1d1d1d;
+  background: #ffffff;
+  border: 2px solid rgba(60, 134, 244, 0.6);
+  border-radius: 12px;
+}
+
+.modal__container__inside__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: calc(524px - 2 * 27px);
+  height: 52px;
+  margin-bottom: 24px;
+}
+
+.modal__container__inside__buttons button {
+  width: 227px;
+  height: 100%;
+  text-align: center;
+}
+
+.modal__container__inside__buttons button>h3 {
+  margin: 0 auto;
+}
+
+.modal__container__inside__buttons__cancel {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: transparent;
+  border: none;
+
+  color: #0053cf;
+}
+
+.health,
+.work,
+.home,
+.other {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding: 2px 8px;
+  margin-right: 12px;
+  border-radius: 6px;
+}
+
+.modal__container__inside__buttons__add {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  background: #d3d3d3;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
